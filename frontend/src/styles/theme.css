@@ -1,0 +1,34 @@
+@theme {
+  /* =========================
+     Brand Colors
+  ========================= */
+  --color-primary: #4f46e5;        /* Indigo */
+  --color-primary-hover: #4338ca;  /* Dark Indigo */
+  --color-secondary: #1f2937;      /* Slate Gray */
+
+  /* =========================
+     Background Colors
+  ========================= */
+  --color-background: #f8fafc;     /* Light Gray */
+  --color-surface: #ffffff;        /* White */
+
+  /* =========================
+     Text Colors
+  ========================= */
+  --color-text-primary: #111827;   /* Dark Gray */
+  --color-text-secondary: #6b7280; /* Gray */
+  --color-text-white: #ffffff;     /* White */
+
+  /* =========================
+     Border Color
+  ========================= */
+  --color-border: #e5e7eb;         /* Light Gray Border */
+
+  /* =========================
+     Status Colors
+  ========================= */
+  --color-success: #22c55e;        /* Green */
+  --color-warning: #f59e0b;        /* Amber */
+  --color-error: #ef4444;          /* Red */
+  --color-info: #3b82f6;           /* Blue */
+}

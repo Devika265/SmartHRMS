@@ -14,28 +14,50 @@ from apps.roles.permission import HasModulePermission
 from apps.roles.models import RolePermissions
 
 # Create your views here.
+from django.contrib.auth import authenticate, get_user_model
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework.permissions import AllowAny
+from rest_framework import status
+from rest_framework_simplejwt.tokens import RefreshToken
+
+from .serializers import LoginSerializer
+from apps.roles.models import RolePermissions
+
+User = get_user_model()
+
+
 class LoginView(APIView):
     permission_classes = [AllowAny]
-    
+
     def post(self, request):
         serializer = LoginSerializer(data=request.data)
-        
+
         if serializer.is_valid():
-            username = serializer.validated_data["username"]
+            email = serializer.validated_data["email"]
             password = serializer.validated_data["password"]
-            
-            user = authenticate(username=username, password=password)
-            
-    
+
+            try:
+                user_obj = User.objects.get(email=email)
+            except User.DoesNotExist:
+                return Response(
+                    {"error": "Invalid email or password"},
+                    status=status.HTTP_401_UNAUTHORIZED,
+                )
+
+            user = authenticate(
+                username=user_obj.username,
+                password=password
+            )
+
             if user:
-                
                 refresh = RefreshToken.for_user(user)
-                
+
                 permissions = []
-                
+
                 if user.role:
                     role_permissions = RolePermissions.objects.filter(role=user.role)
-                    
+
                     for permission in role_permissions:
                         permissions.append({
                             "module": permission.module.name,
@@ -44,39 +66,31 @@ class LoginView(APIView):
                             "can_update": permission.can_update,
                             "can_delete": permission.can_delete,
                         })
-                        
-                
-                
+
                 return Response(
                     {
-                        "message":"Login Successful",
-                        "access":str(refresh.access_token),
-                        "refresh":str(refresh),
-                        "user":{
-                            "id":user.id,
-                            "username":user.username,
-                            "email":user.email,
+                        "message": "Login Successful",
+                        "access": str(refresh.access_token),
+                        "refresh": str(refresh),
+                        "user": {
+                            "id": user.id,
+                            "username": user.username,
+                            "email": user.email,
                             "employee_id": user.employee_id,
                             "phone_number": user.phone_number,
-                            "role":user.role.name if user.role else None,
-                            "permissions":permissions,
-                        }
-                        
-                        
-                    }, status=status.HTTP_200_OK,
+                            "role": user.role.name if user.role else None,
+                            "permissions": permissions,
+                        },
+                    },
+                    status=status.HTTP_200_OK,
                 )
-                
+
             return Response(
-                {
-                    "error":"Invalid username or password"
-                }, 
-                status = status.HTTP_401_UNAUTHORIZED,
+                {"error": "Invalid email or password"},
+                status=status.HTTP_401_UNAUTHORIZED,
             )
-            
+
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-    
-    
-    
 
 class ProfileView(APIView):
     permission_classes = [IsAuthenticated, HasModulePermission]
