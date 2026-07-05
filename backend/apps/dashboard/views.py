@@ -41,8 +41,8 @@ class DashboardView(APIView):
             recent_employee_list.append({
                 "id":employee.id,
                 "name":f"{employee.first_name} {employee.last_name}",
-                "designation":employee.designation,
-                "department":employee.department.name,
+                "designation":employee.designation.name if employee.designation else None,
+                "department": employee.department.name if employee.department else None,
                 "joining_date":employee.joining_date,
                 "is_active":employee.is_active,
             })

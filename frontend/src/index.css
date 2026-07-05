@@ -1,5 +1,26 @@
 @import "tailwindcss";
 
-@import "./styles/theme.css";
-@import "./styles/globals.css";
 
+:root {
+  --primary: #2563EB;
+  --primary-hover: #1D4ED8;
+  --sidebar: #4F46E5;
+
+  --background: #F8FAFC;
+  --surface: #FFFFFF;
+
+  --text-primary: #1E293B;
+  --text-secondary: #64748B;
+
+  --border: #E2E8F0;
+
+  --success: #22C55E;
+  --warning: #F59E0B;
+  --danger: #EF4444;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, sans-serif;
+  background-color: var(--background);
+}
