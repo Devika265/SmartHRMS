@@ -5,8 +5,7 @@ const PasswordInput = ({
   label,
   name,
   placeholder,
-  value,
-  onChange,
+  register,
   error,
   className = "",
 }) => {
@@ -23,10 +22,8 @@ const PasswordInput = ({
       <div className="relative">
         <input
           type={showPassword ? "text" : "password"}
-          name={name}
+          {...register(name)}
           placeholder={placeholder}
-          value={value}
-          onChange={onChange}
           className={`w-full rounded-lg border border-slate-300 px-4 py-2 pr-10 outline-none focus:border-orange-500 ${className}`}
         />
 

@@ -5,8 +5,7 @@ const Input = ({
   type = "text",
   name,
   placeholder,
-  value,
-  onChange,
+  register,
   error,
   className = "",
 }) => {
@@ -20,10 +19,9 @@ const Input = ({
 
       <input
         type={type}
-        name={name}
-        palceholder={placeholder}
-        value={value}
-        onChange={onChange}
+        {...register(name)}
+        placeholder={placeholder}
+        
         className={`w-full rounded-lg border border-slate-300 px-4 py-2 outline-none focus:border-orange-500 ${className}`}
       />
 
