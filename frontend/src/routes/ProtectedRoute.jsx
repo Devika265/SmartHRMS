@@ -1,11 +1,10 @@
-import React from 'react'
+import { Navigate } from "react-router-dom";
 
-const ProtectedRoute = () => {
-  return (
-    <div>
-      
-    </div>
-  )
+function ProtectedRoute({ children }) {
+  const isAuthenticated = true;
+
+  return isAuthenticated ? children : <Navigate to="/" replace />;
 }
 
-export default ProtectedRoute
+
+export default ProtectedRoute;
