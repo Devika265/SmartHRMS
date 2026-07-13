@@ -1,11 +1,15 @@
 import './App.css'
-import AppRoutes from './routes/AppRoutes'
 
 function App() {
   
+
   return (
     <>
-      <AppRoutes />
+      <div className='min-h-screen flex items-center justify-center bg-slate-100'>
+        <h1 className='text-4xl font-bold text-orange-500'>
+          HRMS Frontend
+        </h1>
+      </div>
     </>
   )
 }
