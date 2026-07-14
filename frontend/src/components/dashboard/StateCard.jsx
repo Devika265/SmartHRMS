@@ -6,11 +6,11 @@ const StateCard = ({title, value, icon:Icon}) => {
       <div className='flex items-center justify-between'>
         <div>
           <p className='text-sm text-slate-500 font-medium'>{title}</p>
-          <h2 className='mt-2 text-4xl font-bold text-slate-800'>{value}</h2>
+          <h2 className='mt-2 text-3xl font-bold text-slate-800'>{value}</h2>
         </div>
 
         <div className='rounded-xl bg-orange-100 p-3'>
-          <Icon size={28} className="text-orange-500" />
+          <Icon size={20} className="text-orange-500" />
         </div>
       </div>
     </div>

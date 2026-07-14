@@ -15,7 +15,7 @@ const Navbar = () => {
   console.log(pageTitle)
 
   return (
-    <header className="flex h-16 items-center justify-between border-b bg-white px-6">
+    <header className="flex h-16 items-center justify-between border-b-2 border-orange-500 bg-white px-6">
       <h1 className="text-2xl font-semibold">{title}</h1>
 
       <div className="flex items-center gap-5">

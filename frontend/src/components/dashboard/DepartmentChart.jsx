@@ -1,14 +1,14 @@
 import {
-  PieChart,
-  Pie,
-  Cell,
-  Tooltip,
   ResponsiveContainer,
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
 } from "recharts";
 
 import { departmentSummary } from "../../data/dashboardData";
-
-const COLORS = ["#F97316", "#FB923C", "#FDBA74"];
 
 const DepartmentChart = () => {
   return (
@@ -19,24 +19,30 @@ const DepartmentChart = () => {
 
       <div className="h-80">
         <ResponsiveContainer width="100%" height="100%">
-          <PieChart>
-            <Pie
-              data={departmentSummary}
-              dataKey="employee_count"
-              nameKey="department"
-              outerRadius={100}
-              label
-            >
-              {departmentSummary.map((entry, index) => (
-                <Cell
-                  key={index}
-                  fill={COLORS[index % COLORS.length]}
-                />
-              ))}
-            </Pie>
+          <BarChart
+            data={departmentSummary}
+            margin={{
+              top: 20,
+              right: 20,
+              left: 0,
+              bottom: 5,
+            }}
+          >
+            <CartesianGrid strokeDasharray="3 3" />
+
+            <XAxis dataKey="department" />
+
+            <YAxis allowDecimals={false} />
 
             <Tooltip />
-          </PieChart>
+
+            <Bar
+              dataKey="employee_count"
+              fill="#F97316"
+              radius={[8, 8, 0, 0]}
+              barSize={25}
+            />
+          </BarChart>
         </ResponsiveContainer>
       </div>
     </div>

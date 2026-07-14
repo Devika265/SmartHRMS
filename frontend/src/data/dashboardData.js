@@ -10,55 +10,85 @@ import {
 export const dashboardStates = [
   {
     id: 1,
-    title: "Total Employees",
-    value: 15,
-    icon: Users,
-  },
-  {
-    id: 2,
-    title: "Active Employees",
-    value: 4,
-    icon: UserCheck,
-  },
-  {
-    id: 3,
-    title: "Inactive Employees",
-    value: 1,
-    icon: UserX,
-  },
-  {
-    id: 4,
-    title: "Total Departments",
-    value: 10,
-    icon: Building2,
-  },
-  {
-    id: 5,
     title: "Total Users",
-    value: 33,
+    key: "total_users",
     icon: UserCog,
   },
   {
-    id: 6,
-    title: "Total Roles",
-    value: 14,
-    icon: ShieldCheck,
+    id: 2,
+    title: "Total Employees",
+    key: "total_employees",
+    icon: Users,
+  },
+  {
+    id: 3,
+    title: "Total Departments",
+    key: "total_departments",
+    icon: Building2,
+  },
+  {
+    id: 4,
+    title: "Active Employees",
+    key: "active_employees",
+    icon: UserCheck,
+  },
+  {
+    id: 5,
+    title: "Inactive Employees",
+    key: "inactive_employees",
+    icon: UserX,
   },
 ];
 
-
 export const departmentSummary = [
-    {
-        department:"IT",
-        employee_count:32,
-    },
-    {
-        department:"HR",
-        employee_count:25,
-    },
-    {
-        department:"Finance",
-        employee_count:40,
-    },
+  {
+    department: "IT",
+    employee_count: 32,
+  },
+  {
+    department: "HR",
+    employee_count: 25,
+  },
+  {
+    department: "Finance",
+    employee_count: 40,
+  },
+];
 
-]
+export const recentEmployees = [
+  {
+    id: 1,
+    name: "Devika A",
+    designation: "Software Engineer",
+    department: "IT",
+    is_active: true,
+  },
+  {
+    id: 2,
+    name: "Monisha M",
+    designation: "Manager",
+    department: "HR",
+    is_active: true,
+  },
+  {
+    id: 3,
+    name: "Anu S",
+    designation: "Marketing",
+    department: "Finance",
+    is_active: false,
+  },
+  {
+    id: 4,
+    name: "Vasu K",
+    designation: "UI UX Designer",
+    department: "HR",
+    is_active: true,
+  },
+  {
+    id: 5,
+    name: "Santhiya K",
+    designation: "Tester",
+    department: "IT",
+    is_active: true,
+  },
+];
