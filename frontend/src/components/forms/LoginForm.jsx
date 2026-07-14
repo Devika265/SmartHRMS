@@ -3,8 +3,16 @@ import Input from "../ui/Input";
 import PasswordInput from "../ui/PasswordInput";
 import Button from "../ui/Button";
 import { useForm } from "react-hook-form";
+import { loginUser } from "../../services/authService";
+import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 const LoginForm = () => {
+  const [loading, setLoading] = useState(false);
+  const [loginError, setLoginError] = useState("");
+
+  const navigate = useNavigate();
+
   // const [formData, setFormData] = useState({
   //   email: "",
   //   password: "",
@@ -30,8 +38,27 @@ const LoginForm = () => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = async (data) => {
+    try {
+      setLoading(true);
+      setLoginError("");
+
+      const response = await loginUser(data);
+
+      localStorage.setItem("accessToken", response.access);
+      localStorage.setItem("refreshToken", response.refresh);
+      localStorage.setItem("user", JSON.stringify(response.user));
+
+      toast.success("Login Successful");
+
+      navigate("/dashboard");
+
+      console.log("Login success:", response);
+    } catch (error) {
+      setLoginError(error.response?.data?.error || "Invalid email or password");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -41,13 +68,15 @@ const LoginForm = () => {
         type="email"
         name="email"
         placeholder="Enter your email"
-        register={(name) => register(name, { 
-          required: "Email is required",
-          pattern: {
-            value:/^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-            message:"Please enter a valid email",
-          }
-        })}
+        register={(name) =>
+          register(name, {
+            required: "Email is required",
+            pattern: {
+              value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+              message: "Please enter a valid email",
+            },
+          })
+        }
         error={errors.email?.message}
       />
 
@@ -56,18 +85,27 @@ const LoginForm = () => {
         name="password"
         placeholder="Enter your password"
         register={(name) =>
-          register(name, { 
-            required: "password is required" ,
-            minLength:{
-              value:6,
-              message:"Password must be at least 6 characters",
+          register(name, {
+            required: "password is required",
+            minLength: {
+              value: 6,
+              message: "Password must be at least 6 characters",
             },
           })
         }
         error={errors.password?.message}
       />
 
-      <Button type="submit">Login</Button>
+      {loginError && (
+        <div className="rounded-md bg-red-100 border border-red-300 p-3 text-sm text-red-700">
+          {loginError}
+        </div>
+      )}
+
+      <Button type="submit" disabled={loading}>
+        {loading ? "Logging in..." : "Login"}
+      </Button>
+      
     </form>
   );
 };

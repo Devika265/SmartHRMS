@@ -1,0 +1,9 @@
+import React from 'react'
+
+const PublicRoute = ({children}) => {
+
+    const token = localStorage.getItem("accessToken");
+  return token ? <Navigate to="/dashboard" replace /> : children;
+}
+
+export default PublicRoute
