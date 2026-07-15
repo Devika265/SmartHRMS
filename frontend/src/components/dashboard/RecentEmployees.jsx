@@ -1,7 +1,6 @@
 import React from "react";
-import { recentEmployees } from "../../data/dashboardData";
 
-const RecentEmployees = () => {
+const RecentEmployees = ({employees}) => {
   return (
     <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm h-full">
       <h2 className="mb-6 text-lg font-semibold">
@@ -9,7 +8,7 @@ const RecentEmployees = () => {
       </h2>
 
       <div className="h-87.5 overflow-y-auto pr-2">
-        {recentEmployees.map((employee) => (
+        {employees.map((employee) => (
           <div
             key={employee.id}
           className="flex items-center justify-between border-b border-slate-200 py-4 last:border-none"

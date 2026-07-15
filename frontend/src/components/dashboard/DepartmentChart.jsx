@@ -8,9 +8,8 @@ import {
   Tooltip,
 } from "recharts";
 
-import { departmentSummary } from "../../data/dashboardData";
 
-const DepartmentChart = () => {
+const DepartmentChart = ({data}) => {
   return (
     <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
       <h2 className="mb-6 text-lg font-semibold">
@@ -20,7 +19,7 @@ const DepartmentChart = () => {
       <div className="h-80">
         <ResponsiveContainer width="100%" height="100%">
           <BarChart
-            data={departmentSummary}
+            data={data}
             margin={{
               top: 20,
               right: 20,

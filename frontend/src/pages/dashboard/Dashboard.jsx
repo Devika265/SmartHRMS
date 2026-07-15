@@ -33,12 +33,17 @@ const Dashboard = () => {
             icon={item.icon}
           />
         ))}
-      </div>
+      </div> 
 
       <div className="mt-6 grid grid-cols-2 gap-6">
-        <DepartmentChart />
+        <DepartmentChart
+        
+        data = {dashboardData?.department_summary || []}
+        />
 
-        <RecentEmployees />
+        <RecentEmployees 
+        employees = {dashboardData?.recent_employees || []}
+        />
       </div>
     </>
   );
