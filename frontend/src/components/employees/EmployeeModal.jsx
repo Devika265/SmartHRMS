@@ -110,7 +110,7 @@ const EmployeeModal = ({ onClose, fetchEmployees, employee }) => {
       <div className="flex max-h-[90vh] w-full max-w-3xl flex-col rounded-xl bg-white shadow-xl">
         {/* Header */}
         <div className="flex items-center justify-between border-b px-6 py-4">
-          <h2 className="text-2xl font-bold text-gray-800">
+          <h2 className="text-xl font-bold text-gray-800">
             {employee ? "Edit Employee" : "Add Employee"}
           </h2>
 
@@ -137,7 +137,7 @@ const EmployeeModal = ({ onClose, fetchEmployees, employee }) => {
                 onChange={handleChange}
                 placeholder="Enter First Name"
                 required
-                className="w-full rounded-lg border border-gray-300 px-4 py-2 outline-none focus:border-orange-500"
+                className="w-full rounded-lg border border-gray-300 px-4 py-2 outline-none focus:border-emerald-600"
               />
             </div>
 
@@ -153,7 +153,7 @@ const EmployeeModal = ({ onClose, fetchEmployees, employee }) => {
                 onChange={handleChange}
                 placeholder="Enter Last Name"
                 required
-                className="w-full rounded-lg border border-gray-300 px-4 py-2 outline-none focus:border-orange-500"
+                className="w-full rounded-lg border border-gray-300 px-4 py-2 outline-none focus:border-emerald-600"
               />
             </div>
 
@@ -169,7 +169,7 @@ const EmployeeModal = ({ onClose, fetchEmployees, employee }) => {
                 onChange={handleChange}
                 placeholder="Enter Email"
                 required
-                className="w-full rounded-lg border border-gray-300 px-4 py-2 outline-none focus:border-orange-500"
+                className="w-full rounded-lg border border-gray-300 px-4 py-2 outline-none focus:border-emerald-600"
               />
             </div>
 
@@ -185,7 +185,7 @@ const EmployeeModal = ({ onClose, fetchEmployees, employee }) => {
                 onChange={handleChange}
                 placeholder="Enter Phone Number"
                 required
-                className="w-full rounded-lg border border-gray-300 px-4 py-2 outline-none focus:border-orange-500"
+                className="w-full rounded-lg border border-gray-300 px-4 py-2 outline-none focus:border-emerald-600"
               />
             </div>
 
@@ -199,7 +199,7 @@ const EmployeeModal = ({ onClose, fetchEmployees, employee }) => {
                 value={formData.department}
                 onChange={handleChange}
                 required
-                className="w-full rounded-lg border border-gray-300 px-4 py-2 outline-none focus:border-orange-500"
+                className="w-full rounded-lg border border-gray-300 px-4 py-2 outline-none focus:border-emerald-600"
               >
                 <option value="">Select Department</option>
                 {departments.map((dept) => (
@@ -220,7 +220,7 @@ const EmployeeModal = ({ onClose, fetchEmployees, employee }) => {
                 value={formData.designation}
                 onChange={handleChange}
                 required
-                className="w-full rounded-lg border border-gray-300 px-4 py-2 outline-none focus:border-orange-500"
+                className="w-full rounded-lg border border-gray-300 px-4 py-2 outline-none focus:border-emerald-600"
               >
                 <option value="">Select Designation</option>
                 {designations.map((desig) => (
@@ -243,7 +243,7 @@ const EmployeeModal = ({ onClose, fetchEmployees, employee }) => {
                 onChange={handleChange}
                 placeholder="Enter Salary"
                 required
-                className="w-full rounded-lg border border-gray-300 px-4 py-2 outline-none focus:border-orange-500"
+                className="w-full rounded-lg border border-gray-300 px-4 py-2 outline-none focus:border-emerald-600"
               />
             </div>
 
@@ -258,7 +258,7 @@ const EmployeeModal = ({ onClose, fetchEmployees, employee }) => {
                 value={formData.joining_date}
                 onChange={handleChange}
                 required
-                className="w-full rounded-lg border border-gray-300 px-4 py-2 outline-none focus:border-orange-500"
+                className="w-full rounded-lg border border-gray-300 px-4 py-2 outline-none focus:border-emerald-600"
               />
             </div>
 
@@ -274,7 +274,7 @@ const EmployeeModal = ({ onClose, fetchEmployees, employee }) => {
 
               <button
                 type="submit"
-                className="rounded-lg bg-orange-500 px-5 py-2 text-white hover:bg-orange-600"
+                className="rounded-lg bg-emerald-600 px-5 py-2 text-white hover:bg-emerald-700"
               >
                 {employee ? "Update" : "Save"}
               </button>

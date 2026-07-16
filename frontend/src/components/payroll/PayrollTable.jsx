@@ -19,7 +19,7 @@ const PayrollTable = ({ payrolls, onEdit, onDelete }) => {
         <tbody>
           {payrolls.length > 0 ? (
             payrolls.map((payroll) => (
-              <tr key={payroll.id} className="border-b border-gray-200 transition hover:bg-orange-50">
+              <tr key={payroll.id} className="border-b border-gray-200 transition hover:bg-emerald-50">
                 <td className="px-6 py-4 text-sm text-gray-800">
                   {typeof payroll.employee === 'object' ? `${payroll.employee.first_name} ${payroll.employee.last_name}` : payroll.employee_name || payroll.employee}
                 </td>

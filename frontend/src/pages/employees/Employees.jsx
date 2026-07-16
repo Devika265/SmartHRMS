@@ -90,7 +90,7 @@ const Employees = () => {
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-bold text-gray-800">
+          <h1 className="text-xl font-bold text-gray-800">
             Employees
           </h1>
 
@@ -117,7 +117,7 @@ const Employees = () => {
               fetchEmployees(value);
             }}
             placeholder="Search Employees..."
-            className="w-full rounded-lg border border-gray-300 py-3 pl-11 pr-4 outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-100"
+            className="w-full rounded-lg border border-gray-300 py-3 pl-11 pr-4 outline-none focus:border-emerald-600 focus:ring-2 focus:ring-emerald-100"
           />
         </div>
 
@@ -126,7 +126,7 @@ const Employees = () => {
             setSelectedEmployee(null);
             setOpenModal(true);
           }}
-          className="flex items-center gap-2 rounded-lg bg-orange-500 px-5 py-3 text-white hover:bg-orange-600"
+          className="flex items-center gap-2 rounded-lg bg-emerald-600 px-5 py-3 text-white hover:bg-emerald-700"
         >
           <Plus size={18} />
           Add Employee

@@ -52,7 +52,7 @@ const Leave = () => {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-bold text-gray-800">Leave Management</h1>
+          <h1 className="text-xl font-bold text-gray-800">Leave</h1>
           <p className="mt-1 text-sm text-gray-500">
             Manage employee leaves
           </p>
@@ -69,9 +69,9 @@ const Leave = () => {
               const value = e.target.value;
               setSearch(value);
               fetchLeaves(value);
-            }}
+            }}w
             placeholder="Search Leave..."
-            className="w-full rounded-lg border border-gray-300 py-3 pl-11 pr-4 outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-100"
+            className="w-full rounded-lg border border-gray-300 py-3 pl-11 pr-4 outline-none focus:border-emerald-600 focus:ring-2 focus:ring-emerald-100"
           />
         </div>
 
@@ -80,7 +80,7 @@ const Leave = () => {
             setSelectedLeave(null);
             setOpenModal(true);
           }}
-          className="flex items-center gap-2 rounded-lg bg-orange-500 px-5 py-3 text-white hover:bg-orange-600"
+          className="flex items-center gap-2 rounded-lg bg-emerald-600 px-5 py-3 text-white hover:bg-emerald-700"
         >
           <Plus size={18} />
           Add Leave

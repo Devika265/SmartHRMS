@@ -24,7 +24,7 @@ const PasswordInput = ({
           type={showPassword ? "text" : "password"}
           {...register(name)}
           placeholder={placeholder}
-          className={`w-full rounded-lg border border-slate-300 px-4 py-2 pr-10 outline-none focus:border-orange-500 ${className}`}
+          className={`w-full rounded-lg border border-slate-300 px-4 py-2 pr-10 outline-none focus:border-emerald-600 ${className}`}
         />
 
         <button

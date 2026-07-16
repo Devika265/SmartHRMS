@@ -40,12 +40,12 @@ const EmployeeTable = ({ employees, onEdit, onDelete, onToggle }) => {
             employees.map((employee) => (
               <tr
                 key={employee.id}
-                className="border-b border-gray-200 transition hover:bg-orange-50"
+                className="border-b border-gray-200 transition hover:bg-emerald-50"
               >
                 {/* Employee */}
                 <td className="px-6 py-4">
                   <div className="flex items-center gap-3">
-                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-orange-100 font-semibold text-orange-600">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-100 font-semibold text-emerald-700">
                       {employee.first_name.charAt(0)}
                     </div>
 

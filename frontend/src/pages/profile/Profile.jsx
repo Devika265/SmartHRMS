@@ -77,7 +77,7 @@ const Profile = () => {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-3xl font-bold text-gray-800">Profile</h1>
+        <h1 className="text-xl font-bold text-gray-800">Profile</h1>
         <p className="mt-1 text-sm text-gray-500">
           Manage your account settings and change your password
         </p>
@@ -87,7 +87,7 @@ const Profile = () => {
         {/* Profile Card */}
         <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
           <div className="flex items-center gap-4 border-b pb-4">
-            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-orange-100 text-orange-600">
+            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-emerald-100 text-emerald-700">
               <UserCircle2 size={40} />
             </div>
             <div>
@@ -128,7 +128,7 @@ const Profile = () => {
                 value={passwordData.old_password}
                 onChange={handlePasswordChange}
                 required
-                className="w-full rounded-lg border border-gray-300 px-4 py-2 outline-none focus:border-orange-500"
+                className="w-full rounded-lg border border-gray-300 px-4 py-2 outline-none focus:border-emerald-600"
               />
             </div>
             
@@ -140,7 +140,7 @@ const Profile = () => {
                 value={passwordData.new_password}
                 onChange={handlePasswordChange}
                 required
-                className="w-full rounded-lg border border-gray-300 px-4 py-2 outline-none focus:border-orange-500"
+                className="w-full rounded-lg border border-gray-300 px-4 py-2 outline-none focus:border-emerald-600"
               />
             </div>
 
@@ -152,14 +152,14 @@ const Profile = () => {
                 value={passwordData.confirm_password}
                 onChange={handlePasswordChange}
                 required
-                className="w-full rounded-lg border border-gray-300 px-4 py-2 outline-none focus:border-orange-500"
+                className="w-full rounded-lg border border-gray-300 px-4 py-2 outline-none focus:border-emerald-600"
               />
             </div>
 
             <div className="pt-2">
               <button
                 type="submit"
-                className="flex w-full items-center justify-center gap-2 rounded-lg bg-orange-500 px-4 py-2 font-medium text-white transition hover:bg-orange-600"
+                className="flex w-full items-center justify-center gap-2 rounded-lg bg-emerald-600 px-4 py-2 font-medium text-white transition hover:bg-emerald-700"
               >
                 <Save size={18} />
                 Update Password

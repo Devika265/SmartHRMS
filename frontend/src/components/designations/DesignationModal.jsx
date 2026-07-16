@@ -78,7 +78,7 @@ const DesignationModal = ({ onClose, fetchDesignations, designation }) => {
               onChange={handleChange}
               placeholder="Enter Designation Name"
               required
-              className="w-full rounded-lg border border-gray-300 px-4 py-2 outline-none focus:border-orange-500"
+              className="w-full rounded-lg border border-gray-300 px-4 py-2 outline-none focus:border-emerald-600"
             />
           </div>
 
@@ -93,7 +93,7 @@ const DesignationModal = ({ onClose, fetchDesignations, designation }) => {
             </button>
             <button
               type="submit"
-              className="rounded-lg bg-orange-500 px-5 py-2 text-white hover:bg-orange-600"
+              className="rounded-lg bg-emerald-600 px-5 py-2 text-white hover:bg-emerald-700"
             >
               {designation ? "Update" : "Save"}
             </button>

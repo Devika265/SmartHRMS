@@ -18,8 +18,8 @@ const Navbar = () => {
   const roleName = user?.role || "Administrator";
 
   return (
-    <header className="flex h-16 items-center justify-between border-b-2 border-orange-500 bg-white px-6">
-      <h1 className="text-2xl font-semibold">{title}</h1>
+    <header className="flex h-16 items-center justify-between border-b-2 border-emerald-600 bg-white px-6">
+      <h1 className="text-lg font-semibold text-gray-800">{title}</h1>
 
       <div className="flex items-center gap-5">
         <Bell className="cursor-pointer text-slate-600" size={22} />
@@ -28,7 +28,7 @@ const Navbar = () => {
           to="/profile"
           className="flex cursor-pointer items-center gap-2 rounded-lg p-2 transition hover:bg-gray-50"
         >
-          <UserCircle2 size={34} className="text-orange-500" />
+          <UserCircle2 size={34} className="text-emerald-600" />
 
           <div className="flex flex-col">
             <span className="text-sm font-semibold">{username}</span>

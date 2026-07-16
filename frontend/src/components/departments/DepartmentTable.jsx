@@ -3,9 +3,9 @@ import { Pencil, Trash2, Power } from "lucide-react";
 
 const DepartmentTable = ({ departments, onEdit, onDelete, onToggle }) => {
   return (
-    <div className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
-      <table className="w-full">
-        <thead className="bg-gray-100">
+    <div className="overflow-x-auto rounded-xl border border-gray-200 bg-white shadow-sm">
+      <table className="min-w-full">
+        <thead className="bg-gray-50">
           <tr>
             <th className="px-6 py-4 text-left text-sm font-semibold text-gray-700">
               Department Name
@@ -33,19 +33,19 @@ const DepartmentTable = ({ departments, onEdit, onDelete, onToggle }) => {
           {departments.map((department) => (
             <tr
               key={department.id}
-              className="border-b border-gray-200 hover:bg-orange-50 transition"
+              className="border-b border-gray-200 transition hover:bg-emerald-50"
             >
               {/* Department Name */}
-              <td className="px-6 py-3">{department.name}</td>
+              <td className="px-6 py-4 text-sm text-gray-700">{department.name}</td>
 
-              <td className="px-6 py-3">{department.code}</td>
+              <td className="px-6 py-4 text-sm text-gray-700">{department.code}</td>
 
-              <td className="max-w-xs truncate px-6 py-3">
+              <td className="max-w-xs truncate px-6 py-4 text-sm text-gray-700">
                 {department.description || "-"}
               </td>
 
               {/* Status */}
-              <td className="px-6 py-3 text-center">
+              <td className="px-6 py-4 text-sm text-gray-700 text-center">
                 <span
                   className={`rounded-full px-3 py-1 text-xs font-medium ${
                     department.is_active
@@ -58,7 +58,7 @@ const DepartmentTable = ({ departments, onEdit, onDelete, onToggle }) => {
               </td>
 
               {/* Action */}
-              <td className="px-6 py-3">
+              <td className="px-6 py-4 text-sm text-gray-700">
                 <div className="flex items-center justify-center gap-4">
                   <button onClick={() => onEdit(department)}
                     className="rounded-md p-2 text-blue-600 hover:bg-blue-100"

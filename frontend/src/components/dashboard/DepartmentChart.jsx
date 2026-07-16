@@ -37,7 +37,7 @@ const DepartmentChart = ({data}) => {
 
             <Bar
               dataKey="employee_count"
-              fill="#F97316"
+              fill="#10B981"
               radius={[8, 8, 0, 0]}
               barSize={25}
             />

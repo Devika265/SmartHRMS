@@ -12,7 +12,7 @@ const DashboardLayout = () => {
             <Navbar />
 
 
-            <main className='flex-1 bg-slate-100 p-6'>
+            <main className='flex-1 bg-slate-50 p-6'>
                 <Outlet />
             </main>
 

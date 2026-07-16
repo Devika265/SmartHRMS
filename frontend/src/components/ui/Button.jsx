@@ -12,7 +12,7 @@ const Button = ({
     "w-full rounded-lg px-4 py-2 font-medium transition duration-200 focus:outline-none";
 
   const variants = {
-    primary: "bg-orange-500 text-white hover:bg-orange-600",
+    primary: "bg-emerald-600 text-white hover:bg-emerald-700",
 
     secondary: "bg-slate-600 text-white hover:bg-slate-700",
 

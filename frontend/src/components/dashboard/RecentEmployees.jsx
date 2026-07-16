@@ -14,7 +14,7 @@ const RecentEmployees = ({employees}) => {
           className="flex items-center justify-between border-b border-slate-200 py-4 last:border-none"
           >
             <div className="flex items-center gap-3">
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-orange-100 font-semibold text-orange-600">
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-emerald-100 font-semibold text-emerald-700">
                 {employee.name.charAt(0)}
               </div>
 

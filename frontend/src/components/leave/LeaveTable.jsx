@@ -19,7 +19,7 @@ const LeaveTable = ({ leaves, onEdit, onDelete }) => {
         <tbody>
           {leaves.length > 0 ? (
             leaves.map((leave) => (
-              <tr key={leave.id} className="border-b border-gray-200 transition hover:bg-orange-50">
+              <tr key={leave.id} className="border-b border-gray-200 transition hover:bg-emerald-50">
                 <td className="px-6 py-4 text-sm text-gray-800">
                   {typeof leave.employee === 'object' ? `${leave.employee.first_name} ${leave.employee.last_name}` : leave.employee_name || leave.employee}
                 </td>

@@ -3,9 +3,9 @@ import { Pencil, Trash2 } from "lucide-react";
 
 const DesignationTable = ({ designations, onEdit, onDelete }) => {
   return (
-    <div className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
-      <table className="w-full">
-        <thead className="bg-gray-100">
+    <div className="overflow-x-auto rounded-xl border border-gray-200 bg-white shadow-sm">
+      <table className="min-w-full">
+        <thead className="bg-gray-50">
           <tr>
             <th className="px-6 py-4 text-left text-sm font-semibold text-gray-700">
               Designation Name
@@ -19,10 +19,10 @@ const DesignationTable = ({ designations, onEdit, onDelete }) => {
           {designations.map((designation) => (
             <tr
               key={designation.id}
-              className="border-b border-gray-200 hover:bg-orange-50 transition"
+              className="border-b border-gray-200 transition hover:bg-emerald-50"
             >
-              <td className="px-6 py-3">{designation.name}</td>
-              <td className="px-6 py-3">
+              <td className="px-6 py-4 text-sm text-gray-700">{designation.name}</td>
+              <td className="px-6 py-4 text-sm text-gray-700">
                 <div className="flex items-center justify-center gap-4">
                   <button
                     onClick={() => onEdit(designation)}

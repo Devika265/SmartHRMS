@@ -53,7 +53,7 @@ const Designations = () => {
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-bold text-gray-800">Designations</h1>
+          <h1 className="text-xl font-bold text-gray-800">Designations</h1>
           <p className="mt-1 text-sm text-gray-500">
             Manage all designations in your organization
           </p>
@@ -72,13 +72,13 @@ const Designations = () => {
               fetchDesignations(value);
             }}
             placeholder="Search Designation..."
-            className="w-full rounded-lg border border-gray-300 py-3 pl-11 pr-4 outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-100"
+            className="w-full rounded-lg border border-gray-300 py-3 pl-11 pr-4 outline-none focus:border-emerald-600 focus:ring-2 focus:ring-emerald-100"
           />
         </div>
 
         <button
           onClick={() => setOpenModal(true)}
-          className="flex items-center gap-2 rounded-lg bg-orange-500 px-5 py-3 text-white hover:bg-orange-600"
+          className="flex items-center gap-2 rounded-lg bg-emerald-600 px-5 py-3 text-white hover:bg-emerald-700"
         >
           <Plus size={18} />
           Add Designation

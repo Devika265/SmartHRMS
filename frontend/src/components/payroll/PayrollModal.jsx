@@ -76,7 +76,7 @@ const PayrollModal = ({ onClose, fetchPayrolls, payroll }) => {
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
       <div className="flex max-h-[90vh] w-full max-w-md flex-col rounded-xl bg-white shadow-xl">
         <div className="flex items-center justify-between border-b px-6 py-4">
-          <h2 className="text-2xl font-bold text-gray-800">
+          <h2 className="text-xl font-bold text-gray-800">
             {payroll ? "Edit Payroll" : "Add Payroll"}
           </h2>
           <button onClick={onClose} className="rounded-lg p-2 hover:bg-gray-100">
@@ -93,7 +93,7 @@ const PayrollModal = ({ onClose, fetchPayrolls, payroll }) => {
                 value={formData.employee}
                 onChange={handleChange}
                 required
-                className="w-full rounded-lg border border-gray-300 px-4 py-2 outline-none focus:border-orange-500"
+                className="w-full rounded-lg border border-gray-300 px-4 py-2 outline-none focus:border-emerald-600"
               >
                 <option value="">Select Employee</option>
                 {employees.map((emp) => (
@@ -112,7 +112,7 @@ const PayrollModal = ({ onClose, fetchPayrolls, payroll }) => {
                   value={formData.month}
                   onChange={handleChange}
                   required
-                  className="w-full rounded-lg border border-gray-300 px-4 py-2 outline-none focus:border-orange-500"
+                  className="w-full rounded-lg border border-gray-300 px-4 py-2 outline-none focus:border-emerald-600"
                 >
                   {["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"].map(m => (
                     <option key={m} value={m}>{m}</option>
@@ -128,7 +128,7 @@ const PayrollModal = ({ onClose, fetchPayrolls, payroll }) => {
                   value={formData.year}
                   onChange={handleChange}
                   required
-                  className="w-full rounded-lg border border-gray-300 px-4 py-2 outline-none focus:border-orange-500"
+                  className="w-full rounded-lg border border-gray-300 px-4 py-2 outline-none focus:border-emerald-600"
                 />
               </div>
             </div>
@@ -142,7 +142,7 @@ const PayrollModal = ({ onClose, fetchPayrolls, payroll }) => {
                 value={formData.basic_salary}
                 onChange={handleChange}
                 required
-                className="w-full rounded-lg border border-gray-300 px-4 py-2 outline-none focus:border-orange-500"
+                className="w-full rounded-lg border border-gray-300 px-4 py-2 outline-none focus:border-emerald-600"
               />
             </div>
 
@@ -155,7 +155,7 @@ const PayrollModal = ({ onClose, fetchPayrolls, payroll }) => {
                 value={formData.allowances}
                 onChange={handleChange}
                 required
-                className="w-full rounded-lg border border-gray-300 px-4 py-2 outline-none focus:border-orange-500"
+                className="w-full rounded-lg border border-gray-300 px-4 py-2 outline-none focus:border-emerald-600"
               />
             </div>
 
@@ -168,7 +168,7 @@ const PayrollModal = ({ onClose, fetchPayrolls, payroll }) => {
                 value={formData.deductions}
                 onChange={handleChange}
                 required
-                className="w-full rounded-lg border border-gray-300 px-4 py-2 outline-none focus:border-orange-500"
+                className="w-full rounded-lg border border-gray-300 px-4 py-2 outline-none focus:border-emerald-600"
               />
             </div>
 
@@ -182,7 +182,7 @@ const PayrollModal = ({ onClose, fetchPayrolls, payroll }) => {
               </button>
               <button
                 type="submit"
-                className="rounded-lg bg-orange-500 px-5 py-2 text-white hover:bg-orange-600"
+                className="rounded-lg bg-emerald-600 px-5 py-2 text-white hover:bg-emerald-700"
               >
                 {payroll ? "Update" : "Save"}
               </button>

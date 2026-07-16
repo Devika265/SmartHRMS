@@ -32,7 +32,7 @@ const AttendanceTable = ({ attendances, onEdit, onDelete }) => {
             attendances.map((attendance) => (
               <tr
                 key={attendance.id}
-                className="border-b border-gray-200 transition hover:bg-orange-50"
+                className="border-b border-gray-200 transition hover:bg-emerald-50"
               >
                 <td className="px-6 py-4 text-sm text-gray-800">
                   {typeof attendance.employee === 'object' ? `${attendance.employee.first_name} ${attendance.employee.last_name}` : attendance.employee_name || attendance.employee}

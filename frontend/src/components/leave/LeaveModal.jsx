@@ -76,7 +76,7 @@ const LeaveModal = ({ onClose, fetchLeaves, leave }) => {
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
       <div className="flex max-h-[90vh] w-full max-w-md flex-col rounded-xl bg-white shadow-xl">
         <div className="flex items-center justify-between border-b px-6 py-4">
-          <h2 className="text-2xl font-bold text-gray-800">
+          <h2 className="text-xl font-bold text-gray-800">
             {leave ? "Edit Leave" : "Add Leave"}
           </h2>
           <button onClick={onClose} className="rounded-lg p-2 hover:bg-gray-100">
@@ -93,7 +93,7 @@ const LeaveModal = ({ onClose, fetchLeaves, leave }) => {
                 value={formData.employee}
                 onChange={handleChange}
                 required
-                className="w-full rounded-lg border border-gray-300 px-4 py-2 outline-none focus:border-orange-500"
+                className="w-full rounded-lg border border-gray-300 px-4 py-2 outline-none focus:border-emerald-600"
               >
                 <option value="">Select Employee</option>
                 {employees.map((emp) => (
@@ -111,7 +111,7 @@ const LeaveModal = ({ onClose, fetchLeaves, leave }) => {
                 value={formData.leave_type}
                 onChange={handleChange}
                 required
-                className="w-full rounded-lg border border-gray-300 px-4 py-2 outline-none focus:border-orange-500"
+                className="w-full rounded-lg border border-gray-300 px-4 py-2 outline-none focus:border-emerald-600"
               >
                 <option value="Sick">Sick</option>
                 <option value="Casual">Casual</option>
@@ -127,7 +127,7 @@ const LeaveModal = ({ onClose, fetchLeaves, leave }) => {
                 value={formData.start_date}
                 onChange={handleChange}
                 required
-                className="w-full rounded-lg border border-gray-300 px-4 py-2 outline-none focus:border-orange-500"
+                className="w-full rounded-lg border border-gray-300 px-4 py-2 outline-none focus:border-emerald-600"
               />
             </div>
 
@@ -139,7 +139,7 @@ const LeaveModal = ({ onClose, fetchLeaves, leave }) => {
                 value={formData.end_date}
                 onChange={handleChange}
                 required
-                className="w-full rounded-lg border border-gray-300 px-4 py-2 outline-none focus:border-orange-500"
+                className="w-full rounded-lg border border-gray-300 px-4 py-2 outline-none focus:border-emerald-600"
               />
             </div>
 
@@ -152,7 +152,7 @@ const LeaveModal = ({ onClose, fetchLeaves, leave }) => {
                 required
                 rows={3}
                 placeholder="Enter reason..."
-                className="w-full rounded-lg border border-gray-300 px-4 py-2 outline-none focus:border-orange-500"
+                className="w-full rounded-lg border border-gray-300 px-4 py-2 outline-none focus:border-emerald-600"
               ></textarea>
             </div>
 
@@ -163,7 +163,7 @@ const LeaveModal = ({ onClose, fetchLeaves, leave }) => {
                 value={formData.status}
                 onChange={handleChange}
                 required
-                className="w-full rounded-lg border border-gray-300 px-4 py-2 outline-none focus:border-orange-500"
+                className="w-full rounded-lg border border-gray-300 px-4 py-2 outline-none focus:border-emerald-600"
               >
                 <option value="Pending">Pending</option>
                 <option value="Approved">Approved</option>
@@ -181,7 +181,7 @@ const LeaveModal = ({ onClose, fetchLeaves, leave }) => {
               </button>
               <button
                 type="submit"
-                className="rounded-lg bg-orange-500 px-5 py-2 text-white hover:bg-orange-600"
+                className="rounded-lg bg-emerald-600 px-5 py-2 text-white hover:bg-emerald-700"
               >
                 {leave ? "Update" : "Save"}
               </button>

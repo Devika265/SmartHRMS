@@ -9,8 +9,8 @@ const StateCard = ({title, value, icon:Icon}) => {
           <h2 className='mt-2 text-3xl font-bold text-slate-800'>{value}</h2>
         </div>
 
-        <div className='rounded-xl bg-orange-100 p-3'>
-          <Icon size={20} className="text-orange-500" />
+        <div className='rounded-xl bg-emerald-100 p-3'>
+          <Icon size={20} className="text-emerald-600" />
         </div>
       </div>
     </div>

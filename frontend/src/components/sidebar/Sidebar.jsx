@@ -30,9 +30,9 @@ const Sidebar = () => {
   };
 
   return (
-    <aside className="w-64 min-h-screen bg-slate-900 text-white flex flex-col">
-      <div className="p-6 border-b border-slate-700">
-        <h1 className="text-2xl font-fold text-orange-500">HRMS</h1>
+    <aside className="w-64 min-h-screen bg-white text-gray-800 flex flex-col border-r border-gray-200">
+      <div className="p-6 border-b border-gray-200">
+        <h1 className="text-2xl font-fold text-emerald-600">HRMS</h1>
       </div>
 
       <nav className="p-4">
@@ -45,7 +45,7 @@ const Sidebar = () => {
                 <NavLink
                   to={item.path}
                   className={({ isActive }) =>
-                    `flex items-center gap-3 rounded-lg px-3 py-3 transition-colors ${isActive ? "bg-orange-500 text-white" : "text-slate-300 hover:bg-slate-800 hover:text-white"}`
+                    `flex items-center gap-3 rounded-lg px-3 py-3 transition-colors ${isActive ? "bg-emerald-50 text-emerald-700 font-medium" : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"}`
                   }
                 >
                   <Icon size={20} />
@@ -58,10 +58,10 @@ const Sidebar = () => {
       </nav>
 
       {/* Logout Button */}
-      <div className="mt-auto p-4 border-t border-slate-700">
+      <div className="mt-auto p-4 border-t border-gray-200">
         <button
           onClick={handleLogout}
-          className="flex w-full items-center gap-3 rounded-lg px-3 py-3 text-red-400 transition-colors hover:bg-slate-800 hover:text-red-300"
+          className="flex w-full items-center gap-3 rounded-lg px-3 py-3 text-red-600 transition-colors hover:bg-red-50 hover:text-red-700 font-medium"
         >
           <LogOut size={20} />
           <span>Logout</span>
