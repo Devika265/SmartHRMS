@@ -2,18 +2,15 @@ from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
-from apps.roles.permission import HasModulePermission
 
 from apps.employees.models import Employee
 from apps.departments.models import Department
 from apps.accounts.models import CustomUser
-from apps.roles.models import Role
 
 # Create your views here.
 class DashboardView(APIView):
-    permission_classes = [IsAuthenticated, HasModulePermission]
-    module_name = "dashboard"
-    
+    permission_classes = [IsAuthenticated]
+        
     
     def get(self, request):
         
@@ -30,8 +27,6 @@ class DashboardView(APIView):
         total_departments = Department.objects.count()
         
         total_users = CustomUser.objects.count()
-        
-        total_roles = Role.objects.count()
         
         recent_employee_list = []
         
@@ -65,7 +60,6 @@ class DashboardView(APIView):
             "inactive_employees":inactive_employees,
             "total_departments":total_departments,
             "total_users":total_users,
-            "total_roles":total_roles,
             "recent_employees":recent_employee_list,
             "department_summary":department_summary
         })

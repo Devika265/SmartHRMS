@@ -2,16 +2,14 @@ from django.shortcuts import render
 from .models import Leave
 from .serializers import LeaveSerializer, LeaveReadSerializer
 from rest_framework.permissions import IsAuthenticated
-from apps.roles.permission import HasModulePermission
 from rest_framework import generics, filters
 from django_filters.rest_framework import DjangoFilterBackend
 
 # Create your views here.
 class LeaveListCreateView(generics.ListCreateAPIView):
     queryset = Leave.objects.all().order_by("-created_at")
-    permission_classes = [IsAuthenticated, HasModulePermission]
-    module_name = "leave"
-    
+    permission_classes = [IsAuthenticated]
+        
     filter_backends = [
         DjangoFilterBackend,
         filters.SearchFilter,
@@ -46,9 +44,8 @@ class LeaveListCreateView(generics.ListCreateAPIView):
 
 class LeaveDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Leave.objects.all()
-    permission_classes = [IsAuthenticated, HasModulePermission]
-    module_name = "leave"
-    
+    permission_classes = [IsAuthenticated]
+        
     def get_serializer_class(self):
         if self.request.method == "GET":
             return LeaveReadSerializer

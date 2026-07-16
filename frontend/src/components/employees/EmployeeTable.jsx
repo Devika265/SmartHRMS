@@ -1,7 +1,7 @@
 import React from "react";
 import { Pencil, Trash2, Power } from "lucide-react";
 
-const EmployeeTable = ({ employees }) => {
+const EmployeeTable = ({ employees, onEdit, onDelete, onToggle }) => {
   return (
     <div className="overflow-x-auto rounded-xl border border-gray-200 bg-white shadow-sm">
       <table className="min-w-full">
@@ -89,6 +89,7 @@ const EmployeeTable = ({ employees }) => {
                 <td className="px-6 py-4">
                   <div className="flex items-center justify-center gap-2">
                     <button
+                      onClick={() => onEdit(employee)}
                       className="rounded-md p-2 text-blue-600 transition hover:bg-blue-100"
                       title="Edit"
                     >
@@ -96,6 +97,7 @@ const EmployeeTable = ({ employees }) => {
                     </button>
 
                     <button
+                      onClick={() => onDelete(employee.id)}
                       className="rounded-md p-2 text-red-600 transition hover:bg-red-100"
                       title="Delete"
                     >
@@ -103,6 +105,7 @@ const EmployeeTable = ({ employees }) => {
                     </button>
 
                     <button
+                      onClick={() => onToggle(employee)}
                       className={`rounded-md p-2 transition ${
                         employee.is_active
                           ? "text-green-600 hover:bg-green-100"

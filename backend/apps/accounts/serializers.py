@@ -16,7 +16,6 @@ class ProfileSerializer(serializers.ModelSerializer):
             "email",
             "employee_id",
             "phone_number",
-            "role",
         ]
         
         
@@ -32,7 +31,6 @@ class RegisterSerializer(serializers.ModelSerializer):
             "employee_id",
             "phone_number",
             "password",
-            "role",
         ]
         
     def create(self, validated_data):
@@ -58,8 +56,6 @@ class LogoutSerializer(serializers.Serializer):
     
     
 class UserListSerializer(serializers.ModelSerializer):
-    role = serializers.CharField(source="role.name", read_only=True)
-
     class Meta:
         model = CustomUser
         fields = [
@@ -68,5 +64,4 @@ class UserListSerializer(serializers.ModelSerializer):
             "email",
             "employee_id",
             "phone_number",
-            "role",
         ]

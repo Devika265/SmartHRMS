@@ -49,7 +49,6 @@ INSTALLED_APPS = [
     'apps.departments',
     'apps.employees',
     'django_filters',
-    'apps.roles',
     'apps.dashboard',
     'apps.designations',
     'apps.attendance',

@@ -49,8 +49,6 @@ const LoginForm = () => {
       localStorage.setItem("refreshToken", response.refresh);
       localStorage.setItem("user", JSON.stringify(response.user));
 
-      toast.success("Login Successful");
-
       navigate("/dashboard");
 
       console.log("Login success:", response);

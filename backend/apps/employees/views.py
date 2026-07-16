@@ -5,7 +5,6 @@ from rest_framework import generics, filters
 from .models import Employee
 from django_filters.rest_framework import DjangoFilterBackend
 
-from apps.roles.permission import HasModulePermission
 
 # Create your views here.
 class EmployeeListCreateView(generics.ListCreateAPIView):
@@ -17,9 +16,8 @@ class EmployeeListCreateView(generics.ListCreateAPIView):
         return EmployeeSerializer
     
     serializer_class = EmployeeSerializer
-    permission_classes = [IsAuthenticated,  HasModulePermission,]
-    module_name = "employees"
-    
+    permission_classes = [IsAuthenticated]
+        
     filter_backends = [
         DjangoFilterBackend,
         filters.SearchFilter,
@@ -30,7 +28,8 @@ class EmployeeListCreateView(generics.ListCreateAPIView):
         "first_name",
         "last_name",
         "email",
-        "designation",
+        "designation__name",
+        "department__name",
     ]
     
     filterset_fields = [
@@ -54,8 +53,7 @@ class EmployeeDetailView(generics.RetrieveUpdateDestroyAPIView):
             return EmployeeReadSerializer
         return EmployeeSerializer
     
-    permission_classes = [IsAuthenticated, HasModulePermission,]
+    permission_classes = [IsAuthenticated]
     
-    module_name = "employees"
-    
+        
     

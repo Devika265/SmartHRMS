@@ -8,13 +8,7 @@ class Migration(migrations.Migration):
 
     dependencies = [
         ('accounts', '0001_initial'),
-        ('roles', '0001_initial'),
     ]
 
     operations = [
-        migrations.AddField(
-            model_name='customuser',
-            name='role',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='users', to='roles.role'),
-        ),
     ]

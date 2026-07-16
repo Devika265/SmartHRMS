@@ -11,8 +11,7 @@ import Designations from "../pages/designations/Designations";
 import Attendance from "../pages/attendance/Attendance";
 import Leave from "../pages/leave/Leave";
 import Payroll from "../pages/payroll/Payroll";
-import Roles from "../pages/roles/Roles";
-import Settings from "../pages/settings/Settings";
+import Profile from "../pages/profile/Profile";
 import DashboardLayout from "../layouts/DashboardLayout";
 
 const AppRoutes = () => {
@@ -42,8 +41,7 @@ const AppRoutes = () => {
           <Route path="/attendance" element={<Attendance />}/>
           <Route path="/leave" element={<Leave />}/>
           <Route path="/payroll" element={<Payroll />}/>
-          <Route path="/roles" element={<Roles />}/>
-          <Route path="/settings" element={<Settings />}/>
+          <Route path="/profile" element={<Profile />}/>
         </Route>
 
         <Route path="*" element={<NotFound />} />

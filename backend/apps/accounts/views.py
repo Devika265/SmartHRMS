@@ -10,8 +10,6 @@ from rest_framework.permissions import AllowAny
 from rest_framework import generics
 from .serializers import UserListSerializer
 from .models import CustomUser
-from apps.roles.permission import HasModulePermission
-from apps.roles.models import RolePermissions
 
 # Create your views here.
 from django.contrib.auth import authenticate, get_user_model
@@ -22,7 +20,6 @@ from rest_framework import status
 from rest_framework_simplejwt.tokens import RefreshToken
 
 from .serializers import LoginSerializer
-from apps.roles.models import RolePermissions
 
 User = get_user_model()
 
@@ -53,20 +50,6 @@ class LoginView(APIView):
             if user:
                 refresh = RefreshToken.for_user(user)
 
-                permissions = []
-
-                if user.role:
-                    role_permissions = RolePermissions.objects.filter(role=user.role)
-
-                    for permission in role_permissions:
-                        permissions.append({
-                            "module": permission.module.name,
-                            "can_view": permission.can_view,
-                            "can_create": permission.can_create,
-                            "can_update": permission.can_update,
-                            "can_delete": permission.can_delete,
-                        })
-
                 return Response(
                     {
                         "message": "Login Successful",
@@ -78,8 +61,6 @@ class LoginView(APIView):
                             "email": user.email,
                             "employee_id": user.employee_id,
                             "phone_number": user.phone_number,
-                            "role": user.role.name if user.role else None,
-                            "permissions": permissions,
                         },
                     },
                     status=status.HTTP_200_OK,
@@ -93,8 +74,7 @@ class LoginView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class ProfileView(APIView):
-    permission_classes = [IsAuthenticated, HasModulePermission]
-    module_name = "accounts"
+    permission_classes = [IsAuthenticated]
     
     
     def get(self, request):
@@ -125,8 +105,7 @@ class RegisterView(APIView):
 
 
 class ChangePasswordView(APIView):
-    permission_classes = [IsAuthenticated, HasModulePermission]
-    module_name = "accounts"
+    permission_classes = [IsAuthenticated]
     
     def post(self, request):
         serializer = ChangePasswordSerializer(data=request.data)
@@ -214,9 +193,6 @@ class TokenRefreshView(APIView):
             
             
 class UserListView(generics.ListAPIView):
-    permission_classes = [IsAuthenticated, HasModulePermission]
+    permission_classes = [IsAuthenticated]
     queryset = CustomUser.objects.all()
     serializer_class = UserListSerializer
-    module_name = "accounts"
-    
-    

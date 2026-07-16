@@ -54,16 +54,4 @@ export const sidebarMenu = [
         path:"/payroll",
         icon:Wallet,
     },
-    {
-        id:8,
-        title:"Roles",
-        path:"/roles",
-        icon:ShieldCheck,
-    },
-    {
-        id:9,
-        title:"Settings",
-        path:"/settings",
-        icon:Settings,
-    },
 ]

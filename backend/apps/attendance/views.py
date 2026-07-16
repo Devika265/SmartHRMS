@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from rest_framework.permissions import IsAuthenticated
-from apps.roles.permission import HasModulePermission
 from .models import Attendance
 from .serializers import AttendanceSerializer, AttendanceReadSerializer, CheckInSerializer, CheckOutSerializer
 from rest_framework import generics, filters
@@ -16,9 +15,8 @@ from django_filters.rest_framework import DjangoFilterBackend
 # Create your views here.
 class AttendanceListCreateView(generics.ListCreateAPIView):
     queryset = Attendance.objects.all()
-    permission_classes = [IsAuthenticated, HasModulePermission]
-    module_name = "attendance"
-    
+    permission_classes = [IsAuthenticated]
+        
     filter_backends = [
         DjangoFilterBackend,
         filters.SearchFilter,
@@ -52,9 +50,8 @@ class AttendanceListCreateView(generics.ListCreateAPIView):
     
 class AttendanceDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Attendance.objects.all()
-    permission_classes = [IsAuthenticated, HasModulePermission]
-    module_name = "attendance"
-    
+    permission_classes = [IsAuthenticated]
+        
     
     def get_serializer_class(self):
         if self.request.method == 'GET':
@@ -64,9 +61,8 @@ class AttendanceDetailView(generics.RetrieveUpdateDestroyAPIView):
     
     
 class CheckInView(APIView):
-    permission_classes = [IsAuthenticated, HasModulePermission]
-    module_name = "attendance"
-    
+    permission_classes = [IsAuthenticated]
+        
     def post(self, request):
         serializer = CheckInSerializer(data=request.data)
         
@@ -108,9 +104,8 @@ class CheckInView(APIView):
     
     
 class CheckOutView(APIView):
-    permission_classes = [IsAuthenticated, HasModulePermission]
-    module_name = "attendance"
-    
+    permission_classes = [IsAuthenticated]
+        
     def post(self, request):
         serializer = CheckOutSerializer(data=request.data)
         
